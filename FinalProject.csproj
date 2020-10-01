@@ -188,7 +188,7 @@
     <Content Include="img\dummy\partner-4.jpg" />
     <Content Include="img\logo.png" />
     <Content Include="img\parallax\1.jpg" />
-    <Content Include="img\photo\1.jpg" />
+    <Resource Include="img\photo\1.jpg" />
     <Content Include="img\photo\2.jpg" />
     <Content Include="img\photo\3.jpg" />
     <Content Include="img\photo\4.jpg" />
@@ -303,10 +303,14 @@
     <Content Include="plugins\cubeportfolio\img\cbp-sprite.png" />
     <Content Include="plugins\cubeportfolio\js\jquery.cubeportfolio.js" />
     <Content Include="plugins\cubeportfolio\js\jquery.cubeportfolio.min.js" />
+    <Content Include="Views\web.config" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -314,7 +318,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.woff" />
@@ -374,6 +377,9 @@
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\VBCSCompiler.exe.config" />
     <Content Include="packages\Microsoft.Web.Infrastructure.1.0.0.0\.signature.p7s" />
     <Content Include="packages\Microsoft.Web.Infrastructure.1.0.0.0\Microsoft.Web.Infrastructure.1.0.0.0.nupkg" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Doctor\Doctor.cshtml" />
+    <Content Include="Views\Admin\Admin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -383,7 +389,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>

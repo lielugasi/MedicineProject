@@ -18,6 +18,18 @@ namespace FinalProject
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "admind",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Admin", action = "Admin", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+               name: "doc",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "Doctor", action = "Doctor", id = UrlParameter.Optional }
+           );
         }
     }
 }
