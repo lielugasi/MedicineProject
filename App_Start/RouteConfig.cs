@@ -30,6 +30,12 @@ namespace FinalProject
                url: "{controller}/{action}/{id}",
                defaults: new { controller = "Doctor", action = "Doctor", id = UrlParameter.Optional }
            );
+
+            routes.MapRoute(
+              name: "client",
+              url: "{controller}/{action}/{id}",
+              defaults: new { controller = "Client", action = "Client", id = UrlParameter.Optional }
+          );
         }
     }
 }

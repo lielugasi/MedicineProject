@@ -322,16 +322,18 @@
 
     <!--table customers-->
     <div class="container-xl">
+        <div style="text-align:center;">
+            <h1>רשימת מרשמים עבור פציינט</h1>
+        </div>
         <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>ניהול <b>פציינים</b></h2>
+                            <h2>ניהול <b>מרשמי פציינטים</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <!--top buttons-->
-                            <a href="#addCostumerModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>הוסף לקוח</span></a>
+                            <a href="#addMedModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>הוסף תרופה כמרשם</span></a>
                             <a href="#deleteCostumerModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>מחק</span></a>
                         </div>
                     </div>
@@ -345,9 +347,10 @@
                                     <label for="selectAllb"></label>
                                 </span>
                             </th>
-                            <th>שם</th>
-                            <th>סיסמא</th>
-
+                            <th>שם תרופה</th>
+                            <th>תאריך התחלה</th>
+                            <th>תאריך סיום</th>
+                            <th>מספר רישוי רופא</th>
                             <th>פעולות</th>
                         </tr>
                     </thead>
@@ -359,29 +362,31 @@
                                     <label for="checkbox1b"></label>
                                 </span>
                             </td>
-                            <td>Thomas Hardy</td>
-
-                            <td>89 Chiaroscuro Rd, Portland, USA</td>
+                            <td>אקמול</td>
+                            <td>1/1/2020</td>
+                            <td>2/2/2020</td>
+                            <td>123</td>
                             <td>
-                                <a href="~/Client/Client" class="add" ><i class="material-icons" data-toggle="tooltip" title="הוסף מרשם לפציינט">add</i></a>
+                                <a href="#editCostumerModal" class="add" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="עריכה">edit</i></a>
 
-                                <a href="#deleteCostumerModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                <a href="#deleteCostumerModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="מחק">&#xE872;</i></a>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox2b" name="options[]" value="1">
-                                    <label for="checkbox2b"></label>
+                                    <input type="checkbox" id="checkbox1b" name="options[]" value="1">
+                                    <label for="checkbox1b"></label>
                                 </span>
                             </td>
-                            <td>Dominique Perrier</td>
-
-                            <td>Obere Str. 57, Berlin, Germany</td>
+                            <td>אקמול</td>
+                            <td>1/1/2020</td>
+                            <td>2/2/2020</td>
+                            <td>123</td>
                             <td>
-                                <a href="~/Client/Client" class="add"><i class="material-icons" data-toggle="tooltip" title="הוסף מרשם לפציינט">add</i></a>
+                                <a href="#editCostumerModal" class="add" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="עריכה">edit</i></a>
 
-                                <a href="#deleteCostumerModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                <a href="#deleteCostumerModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="מחק">&#xE872;</i></a>
                             </td>
                         </tr>
 
@@ -403,42 +408,111 @@
         </div>
     </div>
 
-   
 
 
-                <!-- Edit Modal HTML -->
-                <div id="editCostumerModal" class="modal fade">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <form>
-                                <div class="modal-header">
-                                    <h4 class="modal-title">כתוב מרשם</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label>שם </label>
-                                        <input type="text" class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>אימייל</label>
-                                        <input type="email" class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>טלפון</label>
-                                        <input class="form-control" type="tel" required>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="ביטול">
-                                    <input type="submit" class="btn btn-info" value="שמור">
-                                </div>
-                            </form>
+
+    <!-- Edit Modal HTML -->
+    <div id="editCostumerModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form style="text-align:right">
+                    <div class="modal-header">
+                        <h4 class="modal-title">הוסף תרופה למרשם</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>שם תרופה</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>מתאריך</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>עד תאריך</label>
+                            <input class="form-control" type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>מספר אישור רופא</label>
+                            <input class="form-control" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>שם רופא מאשר</label>
+                            <input class="form-control" type="text" required>
                         </div>
                     </div>
-                </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="ביטול">
+                        <input type="submit" class="btn btn-info" value="שמור">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
+    <!-- Add Modal HTML -->
+    <div id="addMedModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form style="text-align:right">
+                    <div class="modal-header">
+                        <h4 class="modal-title">הוסף תרופה למרשם</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>שם תרופה</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>מתאריך</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>עד תאריך</label>
+                            <input class="form-control" type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>מספר אישור רופא</label>
+                            <input class="form-control" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>שם רופא מאשר</label>
+                            <input class="form-control" type="text" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="ביטול">
+                        <input type="submit" class="btn btn-info" value="הוסף">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal HTML -->
+    <div id="deleteCostumerModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">מחיקת לקוח</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p> אתה בטוח שברצונך למחוק שורה זו?</p>
+                        <p class="text-warning"><small>לא ניתן יהיה לשחזר נתונים אלה</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="ביטול">
+                        <input type="submit" class="btn btn-danger" value="מחק">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
