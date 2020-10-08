@@ -17,6 +17,28 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+
+
+
+    <!-- css -->
+    @*<link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css">*@
+    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="~/stylesheet" type="text/css" href="plugins/cubeportfolio/css/cubeportfolio.min.css">
+    <link href="~/css/nivo-lightbox.css" rel="stylesheet" />
+    <link href="~/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/owl.carousel.css" rel="stylesheet" media="screen" />
+    <link href="~/css/owl.theme.css" rel="stylesheet" media="screen" />
+    <link href="~/css/animate.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet">
+
+
+
+    <!-- boxed bg -->
+    <link id="bodybg" href="~/bodybg/bg1.css" rel="stylesheet" type="text/css" />
+    <!-- template skin -->
+    <link id="t-colors" href="~/color/default.css" rel="stylesheet">
     <style>
         body {
             color: #566787;
@@ -106,7 +128,9 @@
             margin: 0 5px;
             cursor: pointer;
         }
-
+        h2{
+            color:white;
+        }
         table.table td:last-child i {
             opacity: 0.9;
             font-size: 22px;
@@ -320,6 +344,65 @@
 </head>
 <body>
 
+
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="top-area" style="height:40px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <p class="bold text-right" style="white-space: pre;">פתוח בימים א-ה  </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container navigation">
+
+            <div class="navbar-header page-scroll">
+                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>*@
+                <a class="navbar-brand" href="index.html">
+                    <img src="~/img/logo.png" alt="" width="150" height="40" />
+                </a>
+
+
+            </div>
+            <div style="display:flex; ">
+                <a href="~/" style="margin-right:10px; cursor:pointer;">דף הבית</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            @*<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#intro">Home</a></li>
+                        <li><a href="#service">Service</a></li>
+                        <li><a href="#doctor">Doctors</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge custom-badge red pull-right">Extra</span>סוג משתמש <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a onclick="changedAccount(this)">רופא</a></li>
+                                <li><a onclick="changedAccount(this)">מנהל מערכת</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>*@
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+
+
+
+
+
+
+
     <!--table customers-->
     <div class="container-xl">
         <div class="table-responsive">
@@ -327,13 +410,9 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>ניהול <b>פציינים</b></h2>
+                            <h2>רשימת <b>לקוחות</b></h2>
                         </div>
-                        <div class="col-sm-6">
-                            <!--top buttons-->
-                            <a href="#addCostumerModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>הוסף לקוח</span></a>
-                            <a href="#deleteCostumerModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>מחק</span></a>
-                        </div>
+                        
                     </div>
                 </div>
                 <table class="table table-striped table-hover">
@@ -346,8 +425,8 @@
                                 </span>
                             </th>
                             <th>שם</th>
-                            <th>סיסמא</th>
-
+                            <th>טלפון</th>
+                            <th>אימייל</th>
                             <th>פעולות</th>
                         </tr>
                     </thead>
@@ -361,11 +440,12 @@
                             </td>
                             <td>Thomas Hardy</td>
 
-                            <td>89 Chiaroscuro Rd, Portland, USA</td>
+                            <td>12345</td>
+                            <td>abc@abc</td>
                             <td>
-                                <a href="~/Client/Client" class="add" ><i class="material-icons" data-toggle="tooltip" title="הוסף מרשם לפציינט">add</i></a>
+                                <a href="~/Client/Client" class="add"><i class="material-icons" data-toggle="tooltip" title="הוסף מרשם לפציינט">add</i></a>
 
-                                <a href="#deleteCostumerModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                
                             </td>
                         </tr>
                         <tr>
@@ -377,11 +457,12 @@
                             </td>
                             <td>Dominique Perrier</td>
 
-                            <td>Obere Str. 57, Berlin, Germany</td>
+                            <td>12356</td>
+                            <td>vbs@dcs</td>
                             <td>
                                 <a href="~/Client/Client" class="add"><i class="material-icons" data-toggle="tooltip" title="הוסף מרשם לפציינט">add</i></a>
 
-                                <a href="#deleteCostumerModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                               
                             </td>
                         </tr>
 
@@ -403,40 +484,40 @@
         </div>
     </div>
 
-   
 
 
-                <!-- Edit Modal HTML -->
-                <div id="editCostumerModal" class="modal fade">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <form>
-                                <div class="modal-header">
-                                    <h4 class="modal-title">כתוב מרשם</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label>שם </label>
-                                        <input type="text" class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>אימייל</label>
-                                        <input type="email" class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>טלפון</label>
-                                        <input class="form-control" type="tel" required>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="ביטול">
-                                    <input type="submit" class="btn btn-info" value="שמור">
-                                </div>
-                            </form>
+
+    <!-- Edit Modal HTML -->
+    <div id="editCostumerModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">כתוב מרשם</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>שם </label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>אימייל</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>טלפון</label>
+                            <input class="form-control" type="tel" required>
                         </div>
                     </div>
-                </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="ביטול">
+                        <input type="submit" class="btn btn-info" value="שמור">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 
