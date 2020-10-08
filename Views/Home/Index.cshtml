@@ -70,7 +70,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge custom-badge red pull-right">Extra</span>User Type<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a  onclick="changedAccount(this)">Doctor</a></li>
-                                <li><a onclick="changedAccount(this)">Adminstrator</a></li>
+                                <li><a onclick="changedAccount(this)">Administrator</a></li>
                      
                             </ul>
                         </li>
@@ -825,13 +825,13 @@
             var e = document.getElementById('div-user-type');
             var title, field2;
 
-            if (elem.innerHTML.includes("מנהל")) {
-                title = 'כניסת מנהל';
-                field2 = 'סיסמא';
+            if (elem.innerHTML.includes("Administrator")) {
+                title = 'Log In as Administrator';
+                field2 = 'Password';
                
             } else {
-                title = 'כניסת רופא';
-                field2 = 'התמחות';
+                title = 'Log In as Doctor';
+                field2 = 'Expertise';
                 
             }
 
@@ -843,7 +843,7 @@
                                                 <div class="row">
                                                     <div class="col-xs-6 col-sm-6 col-md-6">
                                                         <div class="form-group">
-                                                            <label>שם משתמש</label>
+                                                            <label>User Name</label>
                                                             <input type="text" name="first_name" id="first_name" class="form-control input-md">
                                                         </div>
                                                     </div>
@@ -854,7 +854,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <input type="submit" value="אישור" class="btn btn-skin btn-block btn-lg">
+                                                <input type="submit" value="OK" class="btn btn-skin btn-block btn-lg">
                                             </form>
                                         </div>`;
         }
